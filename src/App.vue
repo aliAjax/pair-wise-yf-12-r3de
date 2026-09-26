@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { computed, reactive, ref } from "vue";
+import StationBatchPage from "./business/StationBatchPage.vue";
+
+const view = ref<"stations" | "batches">("stations");
 
 type Field = {
   key: string;
@@ -202,6 +205,14 @@ function remove(id: string) {
         </div>
       </header>
 
+      <nav class="view-tabs">
+        <button type="button" :class="{ active: view === 'stations' }" @click="view = 'stations'">网点管理</button>
+        <button type="button" :class="{ active: view === 'batches' }" @click="view = 'batches'">批次柜台</button>
+      </nav>
+
+      <StationBatchPage v-if="view === 'batches'" />
+
+      <template v-else>
       <section class="metrics">
         <article v-for="(label, index) in project.metricLabels" :key="label" class="metric">
           <span>{{ label }}</span>
@@ -265,6 +276,7 @@ function remove(id: string) {
           </div>
         </section>
       </section>
+      </template>
     </div>
   </main>
 </template>

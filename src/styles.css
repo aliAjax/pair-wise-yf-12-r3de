@@ -251,6 +251,152 @@ textarea {
   padding: 32px 12px;
 }
 
+/* 批次柜台 */
+.view-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.view-tabs button {
+  background: #fff;
+  color: #445069;
+  border: 1px solid #d9e2ee;
+}
+
+.view-tabs button.active {
+  background: #176b87;
+  color: #fff;
+  border-color: #176b87;
+}
+
+.batch-page {
+  display: grid;
+  gap: 18px;
+}
+
+.batch-page .workspace {
+  grid-template-columns: minmax(280px, 360px) 1fr;
+  align-items: start;
+}
+
+.batch-page .side,
+.batch-page .main-col {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.station-picker {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.station-picker select {
+  width: auto;
+  min-width: 220px;
+}
+
+.metrics.five {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.flash {
+  margin: 0;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.flash.ok {
+  background: #e8f4ef;
+  color: #14724f;
+  border: 1px solid #bfe3d4;
+}
+
+.flash.err {
+  background: #fbeae6;
+  color: #b03a24;
+  border: 1px solid #f2c7bd;
+}
+
+.hint {
+  margin: 0;
+  color: #69758c;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.hint.warn {
+  color: #b03a24;
+  font-weight: 700;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.data-table th,
+.data-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid #e6edf5;
+  color: #445069;
+}
+
+.data-table th {
+  color: #172033;
+  background: #f4f7fb;
+}
+
+.data-table tr.off td {
+  color: #9aa5b8;
+  background: #fafbfc;
+}
+
+.pill {
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  white-space: nowrap;
+  background: #e8f4ef;
+  color: #14724f;
+}
+
+.pill.临期 {
+  background: #fdf3e0;
+  color: #a86a00;
+}
+
+.pill.已过期下架 {
+  background: #f0f2f5;
+  color: #7a8499;
+}
+
+.status.canceled {
+  background: #f0f2f5;
+  color: #7a8499;
+}
+
+@media (max-width: 1080px) {
+  .metrics.five {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  .batch-page .workspace {
+    grid-template-columns: 1fr;
+  }
+  .metrics.five {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 860px) {
   .app { padding: 18px; }
   .topbar, .workspace { grid-template-columns: 1fr; }
